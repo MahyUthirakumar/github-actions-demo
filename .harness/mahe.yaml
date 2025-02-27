@@ -1,0 +1,29 @@
+pipeline:
+  name: mahe
+  identifier: mahe
+  projectIdentifier: Harnessproject1
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: hhh
+        identifier: hhh
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Http
+                  name: Http_1
+                  identifier: Http_1
+                  spec:
+                    url: https://github.com/MahyUthirakumar/github-actions-demo/blob/main/.github/workflows/hello-world.yml
+                    method: POST
+                    headers:
+                      - key: Authorization
+                        value: Bearer <+connector.github-action1.token>
+                    inputVariables: []
+                    outputVariables: []
+                  timeout: 10s
+        tags: {}
