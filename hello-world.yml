@@ -36,4 +36,4 @@ pipeline:
                     image: ubuntu
                     shell: Sh
                     envVariables:
-                      Authorize: ""
+                      Authorize: <+input>
