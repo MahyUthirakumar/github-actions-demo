@@ -20,9 +20,7 @@ pipeline:
                   spec:
                     url: https://github.com/MahyUthirakumar/github-actions-demo/tree/main/.github/workflows
                     method: POST
-                    headers:
-                      - key: Authorization
-                        value: <+input>
+                    headers: []
                     inputVariables: []
                     outputVariables: []
                     requestBody: |-
