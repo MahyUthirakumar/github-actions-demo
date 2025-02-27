@@ -22,7 +22,7 @@ pipeline:
                     method: POST
                     headers:
                       - key: Authorization
-                        value: Bearer <+secrets.getValue("github-actions")>
+                        value: <+input>
                     inputVariables: []
                     outputVariables: []
                     requestBody: |-
