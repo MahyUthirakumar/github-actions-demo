@@ -1,0 +1,35 @@
+pipeline:
+  name: hari
+  identifier: hari
+  projectIdentifier: Harnessproject1
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: githubactiontrigger
+        identifier: githubactiontrigger
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Http
+                  name: Http_1
+                  identifier: Http_1
+                  spec:
+                    url: https://github.com/MahyUthirakumar/github-actions-demo/tree/main/.github/workflows
+                    method: POST
+                    headers:
+                      - key: Authorization
+                        value: Bearer <+secrets.getValue("github-actions")>
+                    inputVariables: []
+                    outputVariables: []
+                    requestBody: |-
+                      Json
+
+                      {
+                         "ref": "main"
+                      }
+                  timeout: 10s
+        tags: {}
