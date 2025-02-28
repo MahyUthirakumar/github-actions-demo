@@ -1,0 +1,30 @@
+pipeline:
+  name: test7
+  identifier: test7
+  projectIdentifier: Harnessproject1
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: custom-stage
+        identifier: customstage
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Http
+                  name: Http_1
+                  identifier: Http_1
+                  spec:
+                    url: https://github.com/MahyUthirakumar/github-actions-demo/blob/main/.github/workflows/hello-world.yml
+                    method: POST
+                    headers:
+                      - key: Authorize
+                        value: <+input>
+                    inputVariables: []
+                    outputVariables: []
+                    requestBody: ""
+                  timeout: 10s
+        tags: {}
