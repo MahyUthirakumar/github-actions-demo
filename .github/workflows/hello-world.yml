@@ -1,7 +1,12 @@
 name: Hello World GitHub Actions
  
 on:
-  workflow_dispatch: # Allows manual trigger from Harness
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Trigger message'
+        required: false
+        default: 'Triggered from Harness'
  
 jobs:
   hello-world-job:
